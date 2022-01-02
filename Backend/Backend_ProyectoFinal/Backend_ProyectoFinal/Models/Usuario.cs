@@ -19,6 +19,10 @@
             this.tipoUsuario = tipoUsuario;
         }
 
+        public Usuario()
+        {
+        }
+
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
         public string User { get => user; set => user = value; }
         public string Contrasenia { get => contrasenia; set => contrasenia = value; }

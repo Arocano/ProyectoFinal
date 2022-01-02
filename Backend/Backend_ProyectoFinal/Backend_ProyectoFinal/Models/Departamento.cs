@@ -15,9 +15,6 @@
 
         public Departamento()
         {
-            this.idDepartamento= 0;
-            this.nombre = "";
-            this.descripcion = "";
         }
 
         public int IdDepartamento { get => idDepartamento; set => idDepartamento = value; }
