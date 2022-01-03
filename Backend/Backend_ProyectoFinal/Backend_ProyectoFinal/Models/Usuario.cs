@@ -7,16 +7,17 @@
         private string contrasenia;
         private string nombre;
         private string apellido;
+        private string correo;
         private string tipoUsuario;
 
-        public Usuario(int id, string user, string contra, string nombre, string apellido, string tipoUsuario)
+        public Usuario(int id, string user, string contra, string nombre, string apellido, string correo)
         {
             this.idUsuario = id;
             this.user = user;
             this.contrasenia = contra;
             this.nombre = nombre;
             this.apellido = apellido;
-            this.tipoUsuario = tipoUsuario;
+            this.correo = correo;
         }
 
         public Usuario()
@@ -29,5 +30,6 @@
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }
         public string TipoUsuario { get => tipoUsuario; set => tipoUsuario = value; }
+        public string Correo { get => correo; set => correo = value; }
     }
 }

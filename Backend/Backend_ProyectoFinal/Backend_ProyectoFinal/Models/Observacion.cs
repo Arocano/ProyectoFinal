@@ -2,16 +2,17 @@
 {
     public class Observacion
     {
-        private Registro registro;
         private string descripcion;
 
-        public Observacion(Registro registro, string descripcion)
+        public Observacion(string descripcion)
         {
-            this.Registro = registro;
             this.Descripcion = descripcion;
         }
 
-        public Registro Registro { get => registro; set => registro = value; }
+        public Observacion()
+        {
+        }
+
         public string Descripcion { get => descripcion; set => descripcion = value; }
     }
 }

@@ -9,7 +9,24 @@
         private Actividad actividad;
         private EmpleadoTI empleadoTI;
         private Empleado empleado;
+        private List<Observacion> observaciones;
 
+        public Registro(int idRegistro, string estado, string fecha, string horas, Actividad actividad, EmpleadoTI empleadoTI, Empleado empleado, 
+            List<Observacion> observaciones)
+        {
+            this.idRegistro = idRegistro;
+            this.estado = estado;
+            this.fecha = fecha;
+            this.horas = horas;
+            this.actividad = actividad;
+            this.empleadoTI = empleadoTI;
+            this.empleado = empleado;
+            this.observaciones = observaciones;
+        }
+
+        public Registro()
+        {
+        }
 
         public int IdRegistro { get => idRegistro; set => idRegistro = value; }
         public string Estado { get => estado; set => estado = value; }
@@ -18,5 +35,6 @@
         public Actividad Actividad { get => actividad; set => actividad = value; }
         public EmpleadoTI EmpleadoTI { get => empleadoTI; set => empleadoTI = value; }
         public Empleado Empleado { get => empleado; set => empleado = value; }
+        public List<Observacion> Observaciones { get => observaciones; set => observaciones = value; }
     }
 }
