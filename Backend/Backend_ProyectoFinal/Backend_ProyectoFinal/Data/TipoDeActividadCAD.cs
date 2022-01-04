@@ -55,19 +55,83 @@ namespace Backend_ProyectoFinal.Data
             return tipo;
         }
 
-        public bool InsertarTipoDeActividad(TipoDeActividad t)
+        public static bool InsertarTipoDeActividad(TipoDeActividad t)
         {
-            return true;
+            try
+            {
+                Conexion con = new Conexion();
+                string sql = "INSERT INTO TIPOS_DE_ACTIVIDAD VALUES('" + t.Nombre+"','"+t.Descripcion+"');";
+                SqlCommand comand = new SqlCommand(sql, con.Conectar());
+                int filasAfectadas = comand.ExecuteNonQuery();
+                if (filasAfectadas == 1)
+                {
+                    con.Desconectar();
+                    return true;
+                }
+                else
+                {
+                    con.Desconectar();
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
-        public bool ModificarTipoDeActividad(int idTipo)
+        public static bool ModificarTipoDeActividad(int idTipo, TipoDeActividad t)
         {
-            return true;
+            try
+            {
+                Conexion con = new Conexion();
+                string sql = "UPDATE TIPOS_DE_ACTIVIDAD SET NOM_TIP = '" + t.Nombre+"', DES_TIP = '" + t.Descripcion +"' " +
+                    "WHERE ID_TIP = "+idTipo+";";
+                SqlCommand comand = new SqlCommand(sql, con.Conectar());
+                int filasAfectadas = comand.ExecuteNonQuery();
+                if (filasAfectadas == 1)
+                {
+                    con.Desconectar();
+                    return true;
+                }
+                else
+                {
+                    con.Desconectar();
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
-        public bool EliminarTipoDeActividad(int idTipo)
+        public static bool EliminarTipoDeActividad(int idTipo)
         {
-            return true;
+            try
+            {
+                Conexion con = new Conexion();
+                string sql = "DELETE FROM TIPOS_DE_ACTIVIDAD WHERE ID_TIP=" + idTipo + ";";
+                SqlCommand comand = new SqlCommand(sql, con.Conectar());
+                int filasAfectadas = comand.ExecuteNonQuery();
+                if (filasAfectadas == 1)
+                {
+                    con.Desconectar();
+                    return true;
+                }
+                else
+                {
+                    con.Desconectar();
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }

@@ -53,19 +53,83 @@ namespace Backend_ProyectoFinal.Data
             }
         }
 
-        public bool InsertarDepartamento(Departamento d)
+        public static bool InsertarDepartamento(Departamento d)
         {
-            return false;
+            try
+            {
+                Conexion con = new Conexion();
+                string sql = "INSERT INTO DEPARTAMENTOS VALUES('"+d.Nombre+"','"+d.Descripcion+"');";
+                SqlCommand comand = new SqlCommand(sql, con.Conectar());
+                int filasAfectadas = comand.ExecuteNonQuery();
+                if (filasAfectadas == 1)
+                {
+                    con.Desconectar();
+                    return true;
+                }
+                else
+                {
+                    con.Desconectar();
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
-        public bool ModificarDepartamento(int idDepartamento)
+        public static bool ModificarDepartamento(int idDepartamento, Departamento d)
         {
-            return true;
+            try
+            {
+                Conexion con = new Conexion();
+                string sql = "UPDATE DEPARTAMENTOS SET NOM_DEP = '"+d.Nombre+"', DES_DEP = '"+d.Descripcion+"' " +
+                    "WHERE ID_DEP = " + idDepartamento +";";
+                SqlCommand comand = new SqlCommand(sql, con.Conectar());
+                int filasAfectadas = comand.ExecuteNonQuery();
+                if (filasAfectadas == 1)
+                {
+                    con.Desconectar();
+                    return true;
+                }
+                else
+                {
+                    con.Desconectar();
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
-        public bool EliminarDepartamento(int idDepartamento)
+        public static bool EliminarDepartamento(int idDepartamento)
         {
-            return true;
+            try
+            {
+                Conexion con = new Conexion();
+                string sql = "DELETE FROM DEPARTAMENTOS WHERE ID_DEP='" + idDepartamento + "';";
+                SqlCommand comand = new SqlCommand(sql, con.Conectar());
+                int filasAfectadas = comand.ExecuteNonQuery();
+                if (filasAfectadas == 1)
+                {
+                    con.Desconectar();
+                    return true;
+                }
+                else
+                {
+                    con.Desconectar();
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }

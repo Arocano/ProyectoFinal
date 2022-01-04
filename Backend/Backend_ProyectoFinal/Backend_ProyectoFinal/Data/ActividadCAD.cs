@@ -58,19 +58,83 @@ namespace Backend_ProyectoFinal.Data
             }
         }
 
-        public bool InsertarActividad(Actividad a)
+        public static bool InsertarActividad(Actividad a)
         {
-            return true;
+            try
+            {
+                Conexion con = new Conexion();
+                string sql = "INSERT INTO ACTIVIDADES VALUES('"+a.Nombre+"','"+a.Descripcion+"',"+a.Tipo.IdTipo+");";
+                SqlCommand comand = new SqlCommand(sql, con.Conectar());
+                int filasAfectadas = comand.ExecuteNonQuery();
+                if (filasAfectadas == 1)
+                {
+                    con.Desconectar();
+                    return true;
+                }
+                else
+                {
+                    con.Desconectar();
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
-        public bool ModificarActividad(int idActividad)
+        public static bool ModificarActividad(int idActividad, Actividad a)
         {
-            return true;
+            try
+            {
+                Conexion con = new Conexion();
+                string sql = "UPDATE ACTIVIDADES SET NOM_ACT = '"+a.Nombre+"', DES_ACT = '"+a.Descripcion+"', " +
+                    "TIP_ACT_PER = "+a.Tipo.IdTipo+" WHERE ID_ACT = "+idActividad+";";
+                SqlCommand comand = new SqlCommand(sql, con.Conectar());
+                int filasAfectadas = comand.ExecuteNonQuery();
+                if (filasAfectadas == 1)
+                {
+                    con.Desconectar();
+                    return true;
+                }
+                else
+                {
+                    con.Desconectar();
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
-        public bool EliminarActividad(int idActividad)
+        public static bool EliminarActividad(int idActividad)
         {
-            return true;
+            try
+            {
+                Conexion con = new Conexion();
+                string sql = "DELETE FROM ACTIVIDADES WHERE ID_ACT=" + idActividad + ";";
+                SqlCommand comand = new SqlCommand(sql, con.Conectar());
+                int filasAfectadas = comand.ExecuteNonQuery();
+                if (filasAfectadas == 1)
+                {
+                    con.Desconectar();
+                    return true;
+                }
+                else
+                {
+                    con.Desconectar();
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }

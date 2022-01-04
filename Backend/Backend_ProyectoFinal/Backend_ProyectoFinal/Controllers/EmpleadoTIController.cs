@@ -2,7 +2,6 @@
 using Backend_ProyectoFinal.Models;
 using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Backend_ProyectoFinal.Controllers
 {
@@ -10,18 +9,34 @@ namespace Backend_ProyectoFinal.Controllers
     [ApiController]
     public class EmpleadoTIController : ControllerBase
     {
-        // GET: api/<EmpleadoTIController>
         [HttpGet]
         public IEnumerable<EmpleadoTI> Get()
         {
             return EmpleadoTICAD.ObtenerEmpleadosTI();
         }
 
-        // GET api/<EmpleadoTIController>/5
         [HttpGet("{user}")]
         public EmpleadoTI Get(String user)
         {
             return EmpleadoTICAD.ObtenerEmpleadoTI(user);
+        }
+
+        [HttpPost]
+        public bool Post([FromBody] EmpleadoTI e)
+        {
+            return EmpleadoTICAD.InsertarEmpleadoTI(e);
+        }
+
+        [HttpPut("{id}")]
+        public bool Put(int id, [FromBody] EmpleadoTI e)
+        {
+            return EmpleadoTICAD.ModificarEmpleadoTI(id, e);    
+        }
+
+        [HttpDelete("{user}")]
+        public bool Delete(string user)
+        {
+            return EmpleadoTICAD.EliminarEmpleadoTI(user);
         }
     }
 }

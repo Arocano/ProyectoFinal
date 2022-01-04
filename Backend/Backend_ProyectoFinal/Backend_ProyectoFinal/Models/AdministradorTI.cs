@@ -5,7 +5,12 @@
         public AdministradorTI(int id, string user, string contra, string nombre, string apellido, string correo)
             : base(id, user, contra, nombre, apellido, correo)
         {
-            this.TipoUsuario = "Admin";
+            this.TipoUsuario = "AdministradorTI";
+        }
+
+        public AdministradorTI()
+        {
+
         }
 
         public List<Registro> ReporteTipoActividad()

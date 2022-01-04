@@ -57,19 +57,83 @@ namespace Backend_ProyectoFinal.Data
             }
         }
 
-        public bool InsertarEmpleado(Empleado e)
+        public static bool InsertarEmpleado(Empleado e)
         {
-            return true;
+            try
+            {
+                Conexion con = new Conexion();
+                string sql = "INSERT INTO EMPLEADOS VALUES('" + e.Nombre + "','" + e.Apellido + "','" + e.Departamento.IdDepartamento + "');";
+                SqlCommand comand = new SqlCommand(sql, con.Conectar());
+                int filasAfectadas = comand.ExecuteNonQuery();
+                if (filasAfectadas == 1)
+                {
+                    con.Desconectar();
+                    return true;
+                }
+                else
+                {
+                    con.Desconectar();
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
-        public bool ModificarEmpleado(int idEmpleado)
+        public static bool ModificarEmpleado(int idEmpleado, Empleado e)
         {
-            return false;
+            try
+            {
+                Conexion con = new Conexion();
+                string sql = "UPDATE EMPLEADOS SET NOM_EMP='" + e.Nombre + "', APE_EMP='" + e.Apellido + "', " +
+                    "ID_DEP_PER = " + e.Departamento.IdDepartamento + " WHERE ID_EMP = " + idEmpleado + ";"; 
+                SqlCommand comand = new SqlCommand(sql, con.Conectar());
+                int filasAfectadas = comand.ExecuteNonQuery();
+                if (filasAfectadas == 1)
+                {
+                    con.Desconectar();
+                    return true;
+                }
+                else
+                {
+                    con.Desconectar();
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
-        public bool EliminarEmpleado(int idEmpleado)
+        public static bool EliminarEmpleado(int idEmpleado)
         {
-            return true;
+            try
+            {
+                Conexion con = new Conexion();
+                string sql = "DELETE FROM EMPLEADOS WHERE ID_EMP='" + idEmpleado + "';";
+                SqlCommand comand = new SqlCommand(sql, con.Conectar());
+                int filasAfectadas = comand.ExecuteNonQuery();
+                if (filasAfectadas == 1)
+                {
+                    con.Desconectar();
+                    return true;
+                }
+                else
+                {
+                    con.Desconectar();
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }
