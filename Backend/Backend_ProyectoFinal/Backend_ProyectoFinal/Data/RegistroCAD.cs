@@ -23,10 +23,10 @@ namespace Backend_ProyectoFinal.Data
                     Actividad actividad = ActividadCAD.ObtenerActividad(
                         Int16.Parse(dr["ID_ACT_REG"].ToString()));
                     EmpleadoTI empleadoTI = EmpleadoTICAD.ObtenerEmpleadoTI(
-                        Int16.Parse(dr["ID_USU_REG"].ToString()));
+                        (dr["ID_USU_REG"].ToString()));
                     Empleado empleado = EmpleadoCAD.ObtenerEmpleado(
                         Int16.Parse(dr["ID_EMP_REG"].ToString()));
-                    List<Observacion> observaciones = ObservacionCAD.ObtenerObservaciones(id);
+                    string observaciones = dr["OBS_REG"].ToString();
                     registros.Add(new Registro(id,estado,fecha,horas,actividad,empleadoTI,empleado,observaciones));
                 }
                 return registros;
@@ -56,10 +56,10 @@ namespace Backend_ProyectoFinal.Data
                     Actividad actividad = ActividadCAD.ObtenerActividad(
                         Int16.Parse(dr["ID_ACT_REG"].ToString()));
                     EmpleadoTI empleadoTI = EmpleadoTICAD.ObtenerEmpleadoTI(
-                        Int16.Parse(dr["ID_USU_REG"].ToString()));
+                        (dr["ID_USU_REG"].ToString()));
                     Empleado empleado = EmpleadoCAD.ObtenerEmpleado(
                         Int16.Parse(dr["ID_EMP_REG"].ToString()));
-                    List<Observacion> observaciones = ObservacionCAD.ObtenerObservaciones(id);
+                    string  observaciones = dr["OBS_REG"].ToString();
                     registros.Add(new Registro(id, estado, fecha, horas, actividad, empleadoTI, empleado, observaciones));
                 }
                 return registros;
@@ -83,7 +83,7 @@ namespace Backend_ProyectoFinal.Data
             {
                 Conexion con = new Conexion();
                 string sql = "INSERT INTO REGISTROS VALUES ('" + r.Estado + "','" + r.Fecha + "','" + r.Horas + "'," +
-                    r.Actividad.IdActividad + "," + r.EmpleadoTI.IdUsuario + "," + r.Empleado.IdEmpleado + ");";
+                    r.Actividad.IdActividad + ",'" + r.EmpleadoTI.User + "'," + r.Empleado.IdEmpleado + ",'"+r.Observaciones+"');";
                 SqlCommand comand = new SqlCommand(sql, con.Conectar());
                 int filasAfectadas = comand.ExecuteNonQuery();
                 if (filasAfectadas == 1)

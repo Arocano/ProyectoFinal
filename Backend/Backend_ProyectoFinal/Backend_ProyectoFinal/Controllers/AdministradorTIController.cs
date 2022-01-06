@@ -27,10 +27,10 @@ namespace Backend_ProyectoFinal.Controllers
             return AdministradorTICAD.InsertarAdministradorTI(a);
         }
 
-        [HttpPut("{id}")]
-        public bool Put(int id, [FromBody] AdministradorTI a)
+        [HttpPut("{user}")]
+        public bool Put(string user, [FromBody] AdministradorTI a)
         {
-            return AdministradorTICAD.ModificarAdministradorTI(id, a);
+            return AdministradorTICAD.ModificarContraseniaAdministradorTI(user, a);
         }
 
         [HttpDelete("{user}")]

@@ -1,4 +1,6 @@
-﻿namespace Backend_ProyectoFinal.Models
+﻿using Backend_ProyectoFinal.Data;
+
+namespace Backend_ProyectoFinal.Models
 {
     public class Registro
     {
@@ -9,10 +11,10 @@
         private Actividad actividad;
         private EmpleadoTI empleadoTI;
         private Empleado empleado;
-        private List<Observacion> observaciones;
+        private string observaciones;
 
         public Registro(int idRegistro, string estado, string fecha, string horas, Actividad actividad, EmpleadoTI empleadoTI, Empleado empleado, 
-            List<Observacion> observaciones)
+            string observaciones)
         {
             this.idRegistro = idRegistro;
             this.estado = estado;
@@ -35,6 +37,6 @@
         public Actividad Actividad { get => actividad; set => actividad = value; }
         public EmpleadoTI EmpleadoTI { get => empleadoTI; set => empleadoTI = value; }
         public Empleado Empleado { get => empleado; set => empleado = value; }
-        public List<Observacion> Observaciones { get => observaciones; set => observaciones = value; }
+        public string Observaciones { get => observaciones; set => observaciones = value; }
     }
 }

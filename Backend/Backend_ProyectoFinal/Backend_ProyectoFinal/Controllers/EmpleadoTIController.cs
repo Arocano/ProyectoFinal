@@ -27,10 +27,10 @@ namespace Backend_ProyectoFinal.Controllers
             return EmpleadoTICAD.InsertarEmpleadoTI(e);
         }
 
-        [HttpPut("{id}")]
-        public bool Put(int id, [FromBody] EmpleadoTI e)
+        [HttpPut("{user}")]
+        public bool Put(string user, [FromBody] EmpleadoTI e)
         {
-            return EmpleadoTICAD.ModificarEmpleadoTI(id, e);    
+            return EmpleadoTICAD.ModificarContraseniaEmpleadoTI(user, e);  
         }
 
         [HttpDelete("{user}")]

@@ -9,10 +9,10 @@ namespace Backend_ProyectoFinal.Data
         public Conexion()
         {
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-            builder.DataSource = "proyecto-final-4sw.database.windows.net";
+            builder.DataSource = "proyectofinal4sw.database.windows.net";
             builder.UserID = "administrador";
             builder.Password = "ProyectoFinal4sw";
-            builder.InitialCatalog = "PROYECTOFINAL4SW";
+            builder.InitialCatalog = "PROYECTO_FINAL";
             con = new SqlConnection(builder.ConnectionString);
         }
 

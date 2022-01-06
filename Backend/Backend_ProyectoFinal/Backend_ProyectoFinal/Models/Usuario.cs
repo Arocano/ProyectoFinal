@@ -2,7 +2,6 @@
 {
     public class Usuario
     {
-        private int idUsuario;
         private string user;
         private string contrasenia;
         private string nombre;
@@ -10,9 +9,8 @@
         private string correo;
         private string tipoUsuario;
 
-        public Usuario(int id, string user, string contra, string nombre, string apellido, string correo)
+        public Usuario(string user, string contra, string nombre, string apellido, string correo)
         {
-            this.idUsuario = id;
             this.user = user;
             this.contrasenia = contra;
             this.nombre = nombre;
@@ -24,7 +22,6 @@
         {
         }
 
-        public int IdUsuario { get => idUsuario; set => idUsuario = value; }
         public string User { get => user; set => user = value; }
         public string Contrasenia { get => contrasenia; set => contrasenia = value; }
         public string Nombre { get => nombre; set => nombre = value; }

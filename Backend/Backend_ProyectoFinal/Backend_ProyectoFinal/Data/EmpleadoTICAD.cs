@@ -16,13 +16,12 @@ namespace Backend_ProyectoFinal.Data
                 SqlDataReader dr = comand.ExecuteReader();
                 while (dr.Read())
                 {
-                    int id = Int16.Parse(dr["ID_USU"].ToString());
                     string usuario = dr["USU"].ToString();
                     string pass = dr["PAS"].ToString();
                     string nombre = dr["NOM_USU"].ToString();
                     string apellido = dr["APE_USU"].ToString();
                     string correo = dr["COR_USU"].ToString();
-                    empleados.Add(new EmpleadoTI(id, usuario, pass, nombre, apellido, correo));
+                    empleados.Add(new EmpleadoTI(usuario, pass, nombre, apellido, correo));
                 }
                 return empleados;
             }
@@ -44,41 +43,12 @@ namespace Backend_ProyectoFinal.Data
                 EmpleadoTI e = null;
                 while (dr.Read())
                 {
-                    int id = Int16.Parse(dr["ID_USU"].ToString());
                     string usuario = dr["USU"].ToString();
                     string pass = dr["PAS"].ToString();
                     string nombre = dr["NOM_USU"].ToString();
                     string apellido = dr["APE_USU"].ToString();
                     string correo = dr["COR_USU"].ToString();
-                    e = new EmpleadoTI(id,usuario,pass,nombre,apellido,correo);
-                }
-                return e;
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-        }
-
-        public static EmpleadoTI ObtenerEmpleadoTI(int idEmpleado)
-        {
-            try
-            {
-                Conexion con = new Conexion();
-                string query = "SELECT * FROM USUARIOS WHERE TIP_USU = 'EmpleadoTI'" +
-                    "AND  ID_USU = " + idEmpleado + ";";
-                SqlCommand comand = new SqlCommand(query, con.Conectar());
-                SqlDataReader dr = comand.ExecuteReader();
-                EmpleadoTI e = null;
-                while (dr.Read())
-                {
-                    int id = Int16.Parse(dr["ID_USU"].ToString());
-                    string usuario = dr["USU"].ToString();
-                    string pass = dr["PAS"].ToString();
-                    string nombre = dr["NOM_USU"].ToString();
-                    string apellido = dr["APE_USU"].ToString();
-                    string correo = dr["COR_USU"].ToString();
-                    e = new EmpleadoTI(id, usuario, pass, nombre, apellido, correo);
+                    e = new EmpleadoTI(usuario,pass,nombre,apellido,correo);
                 }
                 return e;
             }
@@ -115,14 +85,12 @@ namespace Backend_ProyectoFinal.Data
             }
         }
 
-        public static bool ModificarEmpleadoTI(int id, EmpleadoTI a)
+        public static bool ModificarContraseniaEmpleadoTI(string user, EmpleadoTI a)
         {
             try
             {
                 Conexion con = new Conexion();
-                string sql = "UPDATE USUARIOS SET PAS='" + a.Contrasenia + "', NOM_USU='" + a.Nombre + "'," +
-                    ",APE_USU='" + a.Apellido + "',COR_USU = '" + a.Correo + "', TIP_USU = '" + a.TipoUsuario + "' " +
-                    "WHERE ID_USU = " + id + ";";
+                string sql = "UPDATE USUARIOS SET PAS='" + a.Contrasenia + "' WHERE USU = '" + user + "';";
                 SqlCommand comand = new SqlCommand(sql, con.Conectar());
                 int filasAfectadas = comand.ExecuteNonQuery();
                 if (filasAfectadas == 1)
