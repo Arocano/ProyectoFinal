@@ -15,10 +15,10 @@ namespace Backend_ProyectoFinal.Controllers
             return ActividadCAD.ObtenerActividades();
         }
 
-        [HttpGet("{id}")]
-        public Actividad Get(int id)
+        [HttpGet("{tipo}")]
+        public IEnumerable<Actividad> Get(string tipo)
         {
-            return ActividadCAD.ObtenerActividad(id);
+            return ActividadCAD.ObtenerActividades(tipo);
         }
 
         [HttpPost]

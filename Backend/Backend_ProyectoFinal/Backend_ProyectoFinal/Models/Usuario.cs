@@ -22,6 +22,16 @@
         {
         }
 
+        public Usuario(string user, string contrasenia, string nombre, string apellido, string correo, string tipoUsuario)
+        {
+            this.user = user;
+            this.contrasenia = contrasenia;
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.correo = correo;
+            this.tipoUsuario = tipoUsuario;
+        }
+
         public string User { get => user; set => user = value; }
         public string Contrasenia { get => contrasenia; set => contrasenia = value; }
         public string Nombre { get => nombre; set => nombre = value; }

@@ -60,7 +60,7 @@
         }
       }
     },
-    "/api/Actividad/{id}": {
+    "/api/Actividad/{tipo}": {
       "get": {
         "tags": [
           "Actividad"
@@ -73,17 +73,19 @@
         "parameters": [
           {
             "in": "path",
-            "name": "id",
+            "name": "tipo",
             "required": true,
-            "type": "integer",
-            "format": "int32"
+            "type": "string"
           }
         ],
         "responses": {
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/Actividad"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Actividad"
+              }
             }
           }
         }
@@ -299,6 +301,40 @@
             "description": "Success",
             "schema": {
               "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "/api/Autenticacion/{user}/{contra}": {
+      "get": {
+        "tags": [
+          "Autenticacion"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "contra",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Usuario"
             }
           }
         }
@@ -1166,6 +1202,29 @@
           "type": "string"
         },
         "descripcion": {
+          "type": "string"
+        }
+      }
+    },
+    "Usuario": {
+      "type": "object",
+      "properties": {
+        "user": {
+          "type": "string"
+        },
+        "contrasenia": {
+          "type": "string"
+        },
+        "nombre": {
+          "type": "string"
+        },
+        "apellido": {
+          "type": "string"
+        },
+        "tipoUsuario": {
+          "type": "string"
+        },
+        "correo": {
           "type": "string"
         }
       }

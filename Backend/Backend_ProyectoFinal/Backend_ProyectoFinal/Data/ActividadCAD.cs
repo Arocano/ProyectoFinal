@@ -29,7 +29,6 @@ namespace Backend_ProyectoFinal.Data
             {
                 return null;
             }
-            
         }
 
         public static Actividad ObtenerActividad(int idActividad)
@@ -51,6 +50,35 @@ namespace Backend_ProyectoFinal.Data
                     a = new Actividad(id, nombre, descripcion, tipo);
                 }
                 return a;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public static List<Actividad> ObtenerActividades(string tipo)
+        {
+            List<Actividad> actividades = new List<Actividad>();
+            try
+            {
+                Conexion con = new Conexion();
+                string query = "SELECT * FROM ACTIVIDADES WHERE TIP_ACT_PER IN " +
+                    "(SELECT ID_TIP FROM TIPOS_DE_ACTIVIDAD " +
+                    "WHERE NOM_TIP = '"+ tipo +"');";
+                SqlCommand comand = new SqlCommand(query, con.Conectar());
+                SqlDataReader dr = comand.ExecuteReader();
+                Actividad a = null;
+                while (dr.Read())
+                {
+                    int id = Int16.Parse(dr["ID_ACT"].ToString());
+                    string nombre = dr["NOM_ACT"].ToString();
+                    string descripcion = dr["DES_ACT"].ToString();
+                    TipoDeActividad tipoA = TipoDeActividadCAD.ObtenerTipoDeActividad(
+                        Int16.Parse(dr["TIP_ACT_PER"].ToString()));
+                    actividades.Add(new Actividad(id, nombre, descripcion, tipoA));
+                }
+                return actividades;
             }
             catch (Exception ex)
             {
