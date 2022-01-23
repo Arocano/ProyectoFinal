@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "246c0f0f-c6c8-4c4f-ac35-d3c0c2b92085": {
+      "ProjectGuid": "246c0f0f-c6c8-4c4f-ac35-d3c0c2b92085",
+      "DisplayName": "BackendPostgres",
+      "ColorIndex": 0
+    },
+    "e3ab621a-98db-4ee6-8f17-f31be9c49576": {
+      "ProjectGuid": "e3ab621a-98db-4ee6-8f17-f31be9c49576",
+      "DisplayName": "Prueba",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

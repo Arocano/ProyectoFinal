@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "hvAfkLJqsr+Wsue2sO1kYJgVo2HuhB8CBzDB3Go9G5w=",
+  "Source": "BackendPostgres",
+  "BasePath": "_content/BackendPostgres",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
