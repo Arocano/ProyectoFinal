@@ -1,0 +1,52 @@
+-->Tipo Actividad
+SELECT COUNT(R.ID_ACT_REG), T.NOM_TIP
+FROM REGISTROS R, TIPOS_DE_ACTIVIDAD T, ACTIVIDADES A
+WHERE T.ID_TIP=A.TIP_ACT_PER
+AND A.ID_ACT=R.ID_ACT_REG
+GROUP BY T.NOM_TIP;
+
+-->personal TI
+SELECT COUNT(R.ID_USU_REG), U.NOM_USU
+FROM REGISTROS R, USUARIOS U
+WHERE U.USU=R.ID_USU_REG
+GROUP BY U.NOM_USU;
+
+-->estados
+SELECT COUNT(EST_REG), EST_REG
+FROM REGISTROS
+GROUP BY EST_REG;
+
+1040
+1140*570
+-->registros completos
+SELECT R.ID_REG, R. EST_REG, R.FEC_REG, R.HOR_REG, A.NOM_ACT, U.NOM_USU, U.APE_USU, E.NOM_EMP, E.APE_EMP, R.OBS_REG
+FROM REGISTROS R, ACTIVIDADES A, USUARIOS U, EMPLEADOS E
+WHERE A.ID_ACT=R.ID_ACT_REG
+AND U.USU=R.ID_USU_REG
+AND E.ID_EMP=R.ID_EMP_REG;
+
+-->filtrado fechas
+SELECT R.ID_REG, R. EST_REG, R.FEC_REG, R.HOR_REG, A.NOM_ACT, U.NOM_USU, U.APE_USU, E.NOM_EMP, E.APE_EMP, R.OBS_REG
+FROM REGISTROS R, ACTIVIDADES A, USUARIOS U, EMPLEADOS E
+WHERE A.ID_ACT=R.ID_ACT_REG
+AND U.USU=R.ID_USU_REG
+AND E.ID_EMP=R.ID_EMP_REG
+AND FEC_REG BETWEEN $P{INI} AND $P{FIN};
+
+
+
+ORDER BY FEC_REG DESC;
+
+
+INSERT INTO USUARIOS (USU,PAS,NOM_USU,APE_USU,COR_USU)
+               VALUES('jojeda','jojeda','Jose','Ojeda','jojeda@ggmail.com');
+INSERT INTO USUARIOS (USU,PAS,NOM_USU,APE_USU,COR_USU)
+               VALUES('lcarrasco','lcarrasco','Luis','Carrasco','lcarrasco@gmail.com');
+
+
+<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.15</version>
+        </dependency>
