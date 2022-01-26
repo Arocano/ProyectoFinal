@@ -43,10 +43,3 @@ INSERT INTO USUARIOS (USU,PAS,NOM_USU,APE_USU,COR_USU)
 INSERT INTO USUARIOS (USU,PAS,NOM_USU,APE_USU,COR_USU)
                VALUES('lcarrasco','lcarrasco','Luis','Carrasco','lcarrasco@gmail.com');
 
-
-<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.15</version>
-        </dependency>
