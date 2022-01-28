@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AppMovil/app/src/main/res/drawable/borde_negro.xml" value="0.2890625" />
+        <entry key="..\:/AppMovil/app/src/main/res/drawable/borde_redondo.xml" value="0.2890625" />
         <entry key="..\:/AppMovil/app/src/main/res/drawable/borde_rojo.xml" value="0.29322916666666665" />
         <entry key="..\:/AppMovil/app/src/main/res/drawable/ic_launcher_background.xml" value="0.29322916666666665" />
         <entry key="..\:/AppMovil/app/src/main/res/layout/activity_cambio_contrasenia.xml" value="0.24864130434782608" />

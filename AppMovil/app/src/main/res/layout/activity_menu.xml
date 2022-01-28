@@ -8,7 +8,7 @@
 
     <Button
         android:id="@+id/btnCambioContraseña"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="112dp"
@@ -21,8 +21,10 @@
 
     <Button
         android:id="@+id/btnRegistroActividades"
-        android:layout_width="228dp"
+        android:layout_width="match_parent"
         android:layout_height="49dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:text="Registo Actividades"
         app:layout_constraintBottom_toTopOf="@+id/btnConsultarActividades"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,7 +35,7 @@
 
     <Button
         android:id="@+id/btnConsultarActividades"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
@@ -47,7 +49,7 @@
 
     <Button
         android:id="@+id/btnCerrar"
-        android:layout_width="229dp"
+        android:layout_width="match_parent"
         android:layout_height="49dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
