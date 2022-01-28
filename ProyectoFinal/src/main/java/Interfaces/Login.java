@@ -64,6 +64,7 @@ public class Login extends javax.swing.JFrame {
         jbtnIniciar.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 16)); // NOI18N
         jbtnIniciar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ingresar2.png"))); // NOI18N
         jbtnIniciar.setText("Iniciar");
+        jbtnIniciar.setAutoscrolls(true);
         jbtnIniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtnIniciarActionPerformed(evt);
@@ -82,7 +83,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/login.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/logo.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
