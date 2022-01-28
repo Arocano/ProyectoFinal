@@ -10,7 +10,7 @@
         android:label="Gestor de Tareas"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppMovil">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
             android:name=".model.ConsultarActividades"
             android:exported="false" />
