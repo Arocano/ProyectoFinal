@@ -62,7 +62,7 @@
         android:layout_marginTop="80dp"
         android:layout_marginEnd="32dp"
         android:backgroundTint="#5C82F2"
-
+        android:background="@drawable/borde_redondo"
         android:text="Cambiar Contraseña"
         android:textColor="@color/white"
         android:textSize="16sp"
@@ -97,6 +97,7 @@
         android:text="Cancelar"
         android:textColor="@color/white"
         android:textSize="16sp"
+        android:background="@drawable/borde_redondo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
