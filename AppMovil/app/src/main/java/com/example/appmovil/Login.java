@@ -111,11 +111,12 @@ public class Login extends AppCompatActivity {
                             Toast.makeText(Login.this,"Fuera de Servicio1",Toast.LENGTH_SHORT).show();
                         }else{
                             if (e.getUser().toString().equals(txtusuario.getText().toString())) {
-                                txtusuario.setBackgroundResource(R.drawable.borde_negro);
+                                txtusuario.setBackgroundResource(R.drawable.borde_redondo);
                                 txtErrorUsuario.setText("");
                                 String user = e.getUser().toString();
                                 String contrasenia = e.getContrasenia().toString();
                                 if (e.getContrasenia().equals(txtpass.getText().toString())) {
+                                    txtpass.setBackgroundResource(R.drawable.borde_redondo);
                                     String[] aux={user,contrasenia};
                                     Intent i = new Intent(Login.this, Menu.class);
                                     i.putExtra("Empleado",aux);

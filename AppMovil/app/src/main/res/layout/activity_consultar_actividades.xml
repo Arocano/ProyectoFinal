@@ -87,8 +87,8 @@
 
     <TableLayout
         android:id="@+id/tabla"
-        android:layout_width="386dp"
-        android:layout_height="277dp"
+        android:layout_width="400dp"
+        android:layout_height="331dp"
         android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -118,7 +118,10 @@
         android:layout_width="120dp"
         android:layout_height="61dp"
         android:layout_marginTop="80dp"
+        android:backgroundTint="#F2695C"
         android:text="Buscar"
+        android:textColor="@color/white"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/tabla"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.636"
