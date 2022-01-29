@@ -61,6 +61,7 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/contrasena.png"))); // NOI18N
         jLabel2.setText("Pass");
 
+        jbtnIniciar.setBackground(new java.awt.Color(92, 130, 242));
         jbtnIniciar.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 16)); // NOI18N
         jbtnIniciar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ingresar2.png"))); // NOI18N
         jbtnIniciar.setText("Iniciar");
@@ -74,6 +75,7 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 36)); // NOI18N
         jLabel3.setText("BIENVENIDO");
 
+        jbtnRegistrar.setBackground(new java.awt.Color(242, 105, 92));
         jbtnRegistrar.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 16)); // NOI18N
         jbtnRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/registrado.png"))); // NOI18N
         jbtnRegistrar.setText("Registrar");

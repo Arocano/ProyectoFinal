@@ -1,6 +1,8 @@
 package Interfaces;
 
 import java.awt.BorderLayout;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,7 +31,14 @@ public class Reportes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jdskPane = new javax.swing.JDesktopPane();
+        ImageIcon icon = new ImageIcon(getClass().getResource("/Imagenes/Mesa de trabajo.png"));
+        Image image = icon.getImage();
+        jdskPane = new javax.swing.JDesktopPane(){
+            public void paintComponent(Graphics g){
+                g.drawImage(image,0,0,getWidth(),getHeight(),this);
+            }
+
+        };
         jPanel1 = new javax.swing.JPanel();
         jDateChooser2 = new com.toedter.calendar.JDateChooser();
         jLabel1 = new javax.swing.JLabel();
@@ -63,6 +72,7 @@ public class Reportes extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 16)); // NOI18N
         jLabel2.setText("Hasta:");
 
+        jButton1.setBackground(new java.awt.Color(92, 130, 242));
         jButton1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 16)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/generar_reporte.png"))); // NOI18N
         jButton1.setText("Generar");
@@ -72,6 +82,7 @@ public class Reportes extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(242, 105, 92));
         jButton2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 16)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrar_sesion .png"))); // NOI18N
         jButton2.setText("Cerrar Sesion");
@@ -81,6 +92,7 @@ public class Reportes extends javax.swing.JFrame {
             }
         });
 
+        jComboBox1.setBackground(new java.awt.Color(92, 130, 242));
         jComboBox1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 16)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estados", "Personal de TI", "Tipo de Actividad", "Reporte Detallado" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {

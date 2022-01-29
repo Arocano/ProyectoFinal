@@ -80,6 +80,7 @@ public class Registro extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 16)); // NOI18N
         jLabel6.setText("Password");
 
+        jbtnRegistrar.setBackground(new java.awt.Color(92, 130, 242));
         jbtnRegistrar.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
         jbtnRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/registrado.png"))); // NOI18N
         jbtnRegistrar.setText("Registrar");
@@ -89,6 +90,7 @@ public class Registro extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(242, 105, 92));
         jButton2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cancelar.png"))); // NOI18N
         jButton2.setText("Cancelar");
