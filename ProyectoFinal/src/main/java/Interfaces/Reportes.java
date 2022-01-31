@@ -170,7 +170,7 @@ public class Reportes extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         reporte();
-
+        this.setExtendedState(MAXIMIZED_BOTH);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -267,6 +267,7 @@ public class Reportes extends javax.swing.JFrame {
     }
 
     private void setearComponentes() {
+        this.setResizable(false);
         jDateChooser1.getDateEditor().setEnabled(false);
         jDateChooser2.getDateEditor().setEnabled(false);
         jComboBox1.setSelectedItem("Estados");
