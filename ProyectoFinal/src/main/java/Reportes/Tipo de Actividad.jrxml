@@ -55,7 +55,11 @@ GROUP BY T.NOM_TIP;]]>
 					</categorySeries>
 				</categoryDataset>
 				<barPlot>
-					<plot/>
+					<plot>
+						<seriesColor seriesOrder="0" color="#F2695C"/>
+						<seriesColor seriesOrder="1" color="#5C82F2"/>
+						<seriesColor seriesOrder="2" color="#051A59"/>
+					</plot>
 					<itemLabel/>
 					<categoryAxisFormat>
 						<axisFormat/>
