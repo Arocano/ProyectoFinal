@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5c8c5feb-aaae-4aad-a8b8-d2dd01ef6c22">
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="135"/>
+	<property name="ireport.x" value="183"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="INI" class="java.util.Date">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
@@ -20,10 +20,23 @@ GROUP BY T.NOM_TIP;]]>
 	<field name="count" class="java.lang.Long"/>
 	<field name="nom_tip" class="java.lang.String"/>
 	<background>
-		<band splitType="Stretch"/>
+		<band height="555" splitType="Stretch">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="555" uuid="bf348a7f-400a-42fe-9a7c-54334bcbfe81"/>
+				<imageExpression><![CDATA["D:\\Repositorios\\ProyectoFinal\\ProyectoFinal\\src\\main\\resources\\Imagenes\\Mesa de trabajo.png"]]></imageExpression>
+			</image>
+		</band>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch"/>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="802" height="39" uuid="21bd246b-5602-4c92-b1bd-7121e6393edc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Mistral" size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COMPUTEC]]></text>
+			</staticText>
+		</band>
 	</title>
 	<summary>
 		<band height="275" splitType="Stretch">
@@ -36,7 +49,7 @@ GROUP BY T.NOM_TIP;]]>
 				</chart>
 				<categoryDataset>
 					<categorySeries>
-						<seriesExpression><![CDATA["Tipo de Actividades"]]></seriesExpression>
+						<seriesExpression><![CDATA["TIPO DE ACTIVIDADES"]]></seriesExpression>
 						<categoryExpression><![CDATA[$F{nom_tip}]]></categoryExpression>
 						<valueExpression><![CDATA[$F{count}]]></valueExpression>
 					</categorySeries>

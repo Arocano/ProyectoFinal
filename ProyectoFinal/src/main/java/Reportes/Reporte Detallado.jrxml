@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="1040" pageHeight="570" orientation="Landscape" columnWidth="1000" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="48eca973-e980-4831-aea6-f1a8c9dc35f4">
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="0"/>
+	<property name="ireport.x" value="126"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="INI" class="java.util.Date">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
@@ -28,46 +28,73 @@ ORDER BY FEC_REG DESC;]]>
 	<field name="ape_emp" class="java.lang.String"/>
 	<field name="obs_reg" class="java.lang.String"/>
 	<background>
-		<band splitType="Stretch"/>
+		<band height="530" splitType="Stretch">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement mode="Opaque" x="0" y="0" width="1000" height="530" uuid="14e85f20-4950-49cd-a427-8354bde50eb5"/>
+				<imageExpression><![CDATA["D:\\Repositorios\\ProyectoFinal\\ProyectoFinal\\src\\main\\resources\\Imagenes\\Mesa de trabajo.png"]]></imageExpression>
+			</image>
+		</band>
 	</background>
 	<title>
-		<band height="39" splitType="Stretch"/>
+		<band height="39" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="1000" height="39" uuid="1679f7a2-4e49-4911-9bd0-8648738851cf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Mistral" size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COMPUTEC]]></text>
+			</staticText>
+		</band>
 	</title>
 	<columnHeader>
 		<band height="25" splitType="Stretch">
 			<staticText>
 				<reportElement x="100" y="0" width="100" height="20" uuid="34de12af-9866-4bd4-a359-f99a255d2c88"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<text><![CDATA[ESTADO]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="200" y="0" width="100" height="20" uuid="56db8ca5-db9a-4d06-9696-a85140737665"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<text><![CDATA[FECHA]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="300" y="0" width="100" height="20" uuid="4c214102-0bdd-4935-8424-7d0aeb8cce72"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<text><![CDATA[HORA]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="0" width="100" height="20" uuid="a1fba587-2105-49d7-9850-a32a3b465b78"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<text><![CDATA[ACTIVIDAD]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="400" y="0" width="200" height="20" uuid="23fdbdf6-6829-4d1a-a8aa-a9e04fff0971"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<text><![CDATA[PERSONAL DE TI]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="600" y="0" width="200" height="20" uuid="f7958082-7ee6-49dd-9c1b-b3e1ccf5b72a"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<text><![CDATA[SOLICITANTE]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="800" y="0" width="200" height="20" uuid="1d882730-de1a-4588-8b0e-a4edc76f831c"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<text><![CDATA[OBSERVACIÓN]]></text>
 			</staticText>
 		</band>

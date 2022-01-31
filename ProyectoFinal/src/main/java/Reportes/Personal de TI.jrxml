@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7800e36b-5b7d-4058-84e2-a07ca460f36f">
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="114"/>
+	<property name="ireport.x" value="183"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="INI" class="java.util.Date">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
@@ -19,10 +19,23 @@ GROUP BY U.NOM_USU;]]>
 	<field name="count" class="java.lang.Long"/>
 	<field name="nom_usu" class="java.lang.String"/>
 	<background>
-		<band splitType="Stretch"/>
+		<band height="555" splitType="Stretch">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="555" uuid="f3068ccf-343e-4a1c-8d06-d3c1e08aa828"/>
+				<imageExpression><![CDATA["D:\\Repositorios\\ProyectoFinal\\ProyectoFinal\\src\\main\\resources\\Imagenes\\Mesa de trabajo.png"]]></imageExpression>
+			</image>
+		</band>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch"/>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="802" height="39" uuid="9354d640-dab8-460c-a7f5-2a6db74e3826"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Mistral" size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COMPUTEC]]></text>
+			</staticText>
+		</band>
 	</title>
 	<summary>
 		<band height="259" splitType="Stretch">
