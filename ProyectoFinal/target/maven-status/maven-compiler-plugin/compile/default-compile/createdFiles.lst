@@ -1,6 +1,7 @@
 Interfaces\Registro$2.class
 Interfaces\Reportes$3.class
 modelos\Usuario.class
+Interfaces\Principal.class
 modelos\EmpleadoTI.class
 Interfaces\Reportes.class
 Interfaces\Login$2.class
