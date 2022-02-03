@@ -40,9 +40,9 @@ public class EmpleadoTI extends Usuario implements Serializable {
                 .add("apellido", apellido)
                 .add("tipoUsuario", TipoUsuario)
                 .add("correo", correo);
-        JsonObject perroJson = buiderEmpleadoTI.build();
+        JsonObject empleadoJson = buiderEmpleadoTI.build();
 
-        return perroJson.toString();
+        return empleadoJson.toString();
     }
 
 }
