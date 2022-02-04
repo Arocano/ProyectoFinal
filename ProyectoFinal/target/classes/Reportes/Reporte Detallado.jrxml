@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="1040" pageHeight="570" orientation="Landscape" columnWidth="1000" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="48eca973-e980-4831-aea6-f1a8c9dc35f4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="126"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="INI" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FIN" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT R. EST_REG, R.FEC_REG, R.HOR_REG, A.NOM_ACT, U.NOM_USU, U.APE_USU, E.NOM_EMP, E.APE_EMP, R.OBS_REG
+FROM REGISTROS R, ACTIVIDADES A, USUARIOS U, EMPLEADOS E
+WHERE A.ID_ACT=R.ID_ACT_REG
+AND U.USU=R.ID_USU_REG
+AND E.ID_EMP=R.ID_EMP_REG
+AND FEC_REG BETWEEN $P{INI} AND $P{FIN}
+ORDER BY FEC_REG DESC;]]>
+	</queryString>
+	<field name="est_reg" class="java.lang.String"/>
+	<field name="fec_reg" class="java.sql.Date"/>
+	<field name="hor_reg" class="java.lang.String"/>
+	<field name="nom_act" class="java.lang.String"/>
+	<field name="nom_usu" class="java.lang.String"/>
+	<field name="ape_usu" class="java.lang.String"/>
+	<field name="nom_emp" class="java.lang.String"/>
+	<field name="ape_emp" class="java.lang.String"/>
+	<field name="obs_reg" class="java.lang.String"/>
+	<background>
+		<band height="530" splitType="Stretch">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement mode="Opaque" x="0" y="0" width="1000" height="530" uuid="14e85f20-4950-49cd-a427-8354bde50eb5"/>
+				<imageExpression><![CDATA["D:\\Repositorios\\ProyectoFinal\\ProyectoFinal\\src\\main\\resources\\Imagenes\\Mesa de trabajo.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="39" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="1000" height="39" uuid="1679f7a2-4e49-4911-9bd0-8648738851cf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Mistral" size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COMPUTEC]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="100" y="0" width="100" height="20" uuid="34de12af-9866-4bd4-a359-f99a255d2c88"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ESTADO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="0" width="100" height="20" uuid="56db8ca5-db9a-4d06-9696-a85140737665"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="100" height="20" uuid="4c214102-0bdd-4935-8424-7d0aeb8cce72"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[HORA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="a1fba587-2105-49d7-9850-a32a3b465b78"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ACTIVIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="0" width="200" height="20" uuid="23fdbdf6-6829-4d1a-a8aa-a9e04fff0971"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PERSONAL DE TI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="600" y="0" width="200" height="20" uuid="f7958082-7ee6-49dd-9c1b-b3e1ccf5b72a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SOLICITANTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="800" y="0" width="200" height="20" uuid="1d882730-de1a-4588-8b0e-a4edc76f831c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[OBSERVACIÓN]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="70f39e11-f94a-472d-84ce-0be9a1d896de"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{est_reg}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="100" height="20" uuid="e050b73b-d23e-4b7a-a998-11ef715ddb8d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fec_reg}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="100" height="20" uuid="75cfc6e7-6434-4688-965a-6d50538e3d82"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{hor_reg}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="50515786-bb7b-4fe2-8fa6-409ebaf543fb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nom_act}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="100" height="20" uuid="28a5ae07-dada-4808-af99-e740bf59379f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nom_usu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="500" y="0" width="100" height="20" uuid="740233c5-ee59-4367-b1be-6e591844c4c1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ape_usu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="600" y="0" width="100" height="20" uuid="19514818-f47e-412b-b547-5a7be2efa05d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nom_emp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="700" y="0" width="100" height="20" uuid="33db2b00-3d7d-4c71-9e49-ff23ba07c5ae"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ape_emp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="800" y="0" width="200" height="20" uuid="d2dd1b9e-3b27-4c16-a843-6982ba71f15d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{obs_reg}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

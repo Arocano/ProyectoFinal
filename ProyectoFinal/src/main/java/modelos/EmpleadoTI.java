@@ -5,8 +5,7 @@
  */
 package modelos;
 
-import java.math.BigDecimal;
-import java.util.GregorianCalendar;
+import java.io.Serializable;
 import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonObjectBuilder;
@@ -15,7 +14,7 @@ import javax.json.JsonObjectBuilder;
  *
  * @author josel
  */
-public class EmpleadoTI extends Usuario {
+public class EmpleadoTI extends Usuario implements Serializable {
 
     String TipoUsuario;
 
@@ -41,9 +40,9 @@ public class EmpleadoTI extends Usuario {
                 .add("apellido", apellido)
                 .add("tipoUsuario", TipoUsuario)
                 .add("correo", correo);
-        JsonObject perroJson = buiderEmpleadoTI.build();
+        JsonObject empleadoJson = buiderEmpleadoTI.build();
 
-        return perroJson.toString();
+        return empleadoJson.toString();
     }
 
 }

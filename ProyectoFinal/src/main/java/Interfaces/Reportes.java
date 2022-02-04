@@ -240,7 +240,7 @@ public class Reportes extends javax.swing.JFrame {
                 Conexion cc = new Conexion();
                 JasperReport reporte;
 
-                reporte = JasperCompileManager.compileReport("src/main/java/Reportes/" + seleccion() + ".jrxml");
+                reporte = JasperCompileManager.compileReport(ClassLoader.getSystemResourceAsStream("Reportes/" + seleccion() + ".jrxml"));
                 Map<String, Object> parametros = new HashMap<String, Object>();
                 parametros.clear();
                 parametros.put("INI", INI);

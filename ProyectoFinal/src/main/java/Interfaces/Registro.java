@@ -24,6 +24,7 @@ import javax.json.JsonObjectBuilder;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import modelos.EmpleadoTI;
+import modelos.Usuario;
 
 /**
  *
@@ -226,7 +227,7 @@ public class Registro extends javax.swing.JFrame {
                 URL url = new URL("https://proyecto-final-ps.herokuapp.com/api/EmpleadoTI");
                 HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
                 conexion.setRequestMethod("POST");
-
+                
                 EmpleadoTI e = new EmpleadoTI(jtxtUser.getText(), jPassword1.getText(), jtxtNombre.getText(), jtxtApellido.getText(), jtxtEmail.getText());
                 String jsonEmpleadoTI = e.toJson();
 
@@ -249,9 +250,10 @@ public class Registro extends javax.swing.JFrame {
                 this.dispose();
 
             } catch (MalformedURLException e) {
-
+                   JOptionPane.showMessageDialog(null, "Servidor no disponible, intente mas tarde1");
             } catch (IOException ex) {
-                Logger.getLogger(Registro.class.getName()).log(Level.SEVERE, null, ex);
+                //Logger.getLogger(Registro.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, "Servidor no disponible, intente mas tarde2");
             }
         }
     }
