@@ -27,14 +27,6 @@ ORDER BY FEC_REG DESC;]]>
 	<field name="nom_emp" class="java.lang.String"/>
 	<field name="ape_emp" class="java.lang.String"/>
 	<field name="obs_reg" class="java.lang.String"/>
-	<background>
-		<band height="530" splitType="Stretch">
-			<image hAlign="Center" vAlign="Middle">
-				<reportElement mode="Opaque" x="0" y="0" width="1000" height="530" uuid="14e85f20-4950-49cd-a427-8354bde50eb5"/>
-				<imageExpression><![CDATA["D:\\Repositorios\\ProyectoFinal\\ProyectoFinal\\src\\main\\resources\\Imagenes\\Mesa de trabajo.png"]]></imageExpression>
-			</image>
-		</band>
-	</background>
 	<title>
 		<band height="39" splitType="Stretch">
 			<staticText>
